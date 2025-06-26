@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  movie-collections-client-dev:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    container_name: movie-collections-client-dev
+    ports:
+      - "4200:4200"
+    volumes:
+      # Mount source code for hot reload
+      - .:/app
+      # Exclude node_modules to prevent conflicts
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - movie-collections-dev-network
+
+networks:
+  movie-collections-dev-network:
+    driver: bridge
