@@ -1,0 +1,33 @@
+.header {
+    &__container {
+        background: rgb(3 37 65);
+        height: 64px;
+    }
+
+    &__brand {
+        width: 154px;
+    }
+
+    &__anchors {
+        a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.outline-white-btn {
+    transition: all .3s ease;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    &:hover {
+        background: #fff;
+        color: rgb(28, 28, 29);
+    }
+
+}
