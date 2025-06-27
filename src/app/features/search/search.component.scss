@@ -1,0 +1,25 @@
+.hero {
+    &__container {
+        height: 50vh;
+        background: 
+            linear-gradient(#585858a2, #585858a2), // blue overlay
+            url('../../../assets/images/movie-poster.jpg');           
+            min-height: 300px;
+        height: calc(100vh / 2.5);
+        max-height: 360px;
+        background-color: rgba(0, 0, 0, .2);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    &__content {
+        line-height: 40px;
+    }   
+
+
+}
+
+.hero-title {
+    font-size: 36px;
+}
