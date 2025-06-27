@@ -1,0 +1,6 @@
+<form [formGroup]="searchForm">
+    <input formControlName="search" class="rounded-5 px-4" type="text">
+    <div *ngIf="searchForm.invalid && searchForm.touched" class="text-danger h6">
+          {{ getError('search') }}
+    </div>
+</form>
