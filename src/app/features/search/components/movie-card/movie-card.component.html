@@ -1,0 +1,31 @@
+<mat-card class="example-card" class="d-flex card-container p-0 shadow rounded-3 border" appearance="outlined">
+    <img *ngIf="show.poster_path" [src]="imgPath + show.poster_path">
+    <img *ngIf="!show.poster_path" src="https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg" alt="">
+    <mat-card-content class="p-3 mb-0 w-100">
+        <article class="d-flex flex-column justify-content-between h-100 w-100">
+            <div class="card__title w-100">
+                <div class="d-flex justify-content-between flex-wrap w-100">
+                    <div class="d-flex gap-1">
+                        <h3 class="fw-bold mb-0">
+                            {{show.title}}   {{show.vote_average}}
+                        </h3>
+                        <h3 class="text-light-grey mb-0">
+                            ({{show.original_title}})
+                        </h3>
+                    </div>
+                    <div class="me-2">
+                        <app-pie-chart diameter="35" [inputValue]="show.vote_average.toString()"></app-pie-chart>
+                    </div>
+                </div>
+                <div class="text-secondary fs-12">
+                    {{ show.release_date | date: 'MMMM d, y' }}
+                </div>
+            </div>
+            <p class="m-0 mt-3 truncate-2-lines">
+                {{show.overview}}
+            </p>
+        </article>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>
