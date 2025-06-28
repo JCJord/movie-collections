@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h1>Collections</h1>
+        <div class="collections-grid d-flex flex-column gap-3" *ngIf="(collections$ | async) as collections">
+            <mat-expansion-panel *ngFor="let collection of collections; trackBy: trackByCollectionId" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="text-capitalize fw-boldh h4 m-0"> {{collection.title}}</mat-panel-title>
+                    <mat-panel-description class="text-capitalize d-flex justify-content-between"> {{collection.description}}         
+                        <div class="d-flex gap-4 flex-wrap">
+                            <mat-icon>movie</mat-icon>
+                            <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="d-flex flex-column gap-3">
+                    <div *ngFor="let show of collection.shows" class="d-flex justify-content-between align-items-center gap-2 w-100">
+                        <app-movie-card class="flex-grow-1 w-100" [show]="show" [showCollectionButton]="false"></app-movie-card>
+                        <button class="mt-2 d-flex justify-content-center" mat-button color="warn" (click)="deleteFromCollection(collection.id!, show.id)">
+                            <mat-icon>
+                                delete
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </div>
+  </div>
