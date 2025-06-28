@@ -1,0 +1,23 @@
+@use 'src/styles/variables' as *;
+input {
+    background-color: white;
+    width: 100%;          /* optional, to control size */
+    box-sizing: border-box; /* for consistent sizing */
+    outline: none;
+    border: none;
+    padding: 10px 98px 10px 20px;
+}
+
+.button-container {
+    top: 2px;
+    right: 2px;
+}
+
+.search-button-bg {
+    background: linear-gradient(to right, rgba($color-primary-start, 1) 0%, rgba($color-primary-end, 1) 100%) !important;
+    color: #fff;
+    &:disabled {
+        background: linear-gradient(to right, rgba($color-primary-start, 0.5) 0%, rgba($color-primary-end, 0.5) 100%) !important;
+        color: #fff !important;
+    }
+}

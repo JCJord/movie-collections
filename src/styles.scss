@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-32 {
+    font-size: 32px;
+} 
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.text-light-grey {
+    color: #999;
+}
+
+.w-fit-content {
+    width: fit-content;
+}

@@ -1,0 +1,16 @@
+<div class="star-rating d-flex align-items-center mb-2">
+  <ng-container *ngFor="let star of stars; let i = index">
+    <mat-icon
+      class="star"
+      [ngClass]="{ active: i < rating }"
+      (click)="setRating(i + 1)">
+      {{ i < rating ? 'star' : 'star_border' }}
+    </mat-icon>
+  </ng-container>
+</div>
+<button mat-raised-button color="primary" [disabled]="isLoading" (click)="submitRating()">
+  <div class="d-flex align-items-center gap-2">
+    <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" [diameter]="20"></mat-progress-spinner>
+    Submit Rating
+  </div>
+</button>

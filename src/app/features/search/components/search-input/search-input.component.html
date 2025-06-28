@@ -1,0 +1,11 @@
+<form [formGroup]="searchForm" class="position-relative">
+    <input formControlName="search" placeholder="Search for Movie or Serie..." class="rounded-5" type="text">
+    <div class="button-container position-absolute">
+        <button mat-raised-button class="rounded-5 search-button-bg px-4" [disabled]="searchForm.invalid" (click)="search()">Search</button>
+    </div>
+    <div class="position-relative mt-1">
+        <div *ngIf="searchForm.invalid && searchForm.touched" class="alert alert-info py-2 shadow danger-alert bg-white position-absolute top-0 h6 fs-12">
+            {{ getError('search') }}
+        </div>
+    </div>
+</form>

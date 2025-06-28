@@ -1,0 +1,36 @@
+@use 'src/styles/variables' as *;
+.card-container {
+    cursor: pointer;
+    img {
+        width: 94px;
+        height: 142px;
+        max-width: 94px;
+        max-height: 142px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+}
+
+.truncate-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-link {
+  cursor: pointer;
+  &:hover {
+    transition: .3s ease-in-out;
+    span {
+      color: $color-primary-end;
+    }
+  }
+  text-decoration: none;
+
+}
+
+::ng-deep .mat-button {
+  min-width: 0 !important;
+}
