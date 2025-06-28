@@ -1,0 +1,37 @@
+<section class="hero__container d-flex align-items-center w-100">
+    <div class="w-100 mx-auto position-relative container-lg mb-5">
+        <div class="hero__content text-light">
+            <article class="hero-title">
+                <p class="fw-bold fs-36">Welcome.</p>
+                <p class="mb-2 fs-32">Millions of Movies, Series and People to Explore.</p>
+            </article>
+            <div class="mt-5">
+                <app-search-input (onSearch)="loadShows($event)"></app-search-input>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-lg">
+    <div class="d-flex flex-column gap-3 pt-3">
+        <div *ngIf="isLoading;else content">
+            <div *ngFor="let skeleton of getSkeletonArray(20)">
+                <app-skeleton-movie-card></app-skeleton-movie-card>
+            </div>
+        </div>
+        <ng-template #content>
+            <div *ngFor="let show of shows">
+                <app-movie-card [show]="show"></app-movie-card>
+            </div>
+        </ng-template>
+    </div>
+    <div *ngIf="shows.length > 0" class="d-flex justify-content-center mt-4 mb-4">
+        <mat-paginator 
+            [length]="totalResults"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="[10, 20, 50]"
+            [showFirstLastButtons]="true"
+            (page)="onPageChange($event)"
+            aria-label="Select page of search results">
+        </mat-paginator>
+    </div>
+</section>

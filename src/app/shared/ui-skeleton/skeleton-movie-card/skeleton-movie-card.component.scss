@@ -1,0 +1,17 @@
+@use 'src/styles/_skeleton.scss';
+
+.card-container {
+    img {
+        width: 94px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+}
+
+.title-skeleton {
+    width: 225px;
+}
+
+.date-skeleton {
+    width: 100px;
+}
