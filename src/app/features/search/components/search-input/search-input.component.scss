@@ -4,4 +4,15 @@ input {
     box-sizing: border-box; /* for consistent sizing */
     outline: none;
     border: none;
+    padding: 10px 98px 10px 20px;
+}
+
+.button-container {
+    top: 2px;
+    right: 2px;
+}
+
+.search-button-bg {
+    background: linear-gradient(to right, rgba(rgb(30 213 169), 1) 0%, rgba(rgb(1 180 228), 1) 100%);
+    color: #fff;
 }
