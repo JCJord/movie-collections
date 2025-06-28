@@ -5,13 +5,13 @@
         <article class="d-flex flex-column justify-content-between h-100 w-100">
             <div class="card__title w-100">
                 <div class="d-flex justify-content-between flex-wrap w-100">
-                    <div class="d-flex gap-1">
-                        <h3 class="fw-bold mb-0">
+                    <div class="gap-1">
+                        <span class="fw-bold mb-0 fs-16">
                             {{show.title}}
-                        </h3>
-                        <h3 class="text-light-grey mb-0">
+                        </span>
+                        <span class="text-light-grey mb-0 ps-16">
                             ({{show.original_title}})
-                        </h3>
+                        </span>
                     </div>
                     <div class="me-2">
                         <app-pie-chart diameter="35" [inputValue]="show.vote_average.toString()"></app-pie-chart>
