@@ -30,7 +30,7 @@
         </h3>
         
         <div>
-            <app-star-rating [initialRating]="5" (ratingSubmitted)="saveRating($event)"></app-star-rating>
+            <app-star-rating [initialRating]="5" [isLoading]="isSendingVote" (ratingSubmitted)="saveRating($event)"></app-star-rating>
         </div>
         <button mat-button [matMenuTriggerFor]="menu">Languages <i class="ms-2 bi bi-chevron-down"></i></button>
             <mat-menu #menu="matMenu">

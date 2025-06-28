@@ -14,7 +14,7 @@ export class MovieDialogComponent implements OnInit {
   imgPath: string = 'https://image.tmdb.org/t/p/w500';
   show!: MovieDetails;
   guestSessionId: any;
-
+  isSendingVote: boolean = false;
   constructor(
     public dialogRef: MatDialogRef<MovieDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: {data: MovieDetails, guestSessionId: string},
@@ -32,12 +32,15 @@ export class MovieDialogComponent implements OnInit {
   }
 
   saveRating(rating: number) {
+    this.isSendingVote = true;
     this.movieService.rateShow(this.show.id, rating, this.guestSessionId).subscribe({
       next: (response) => {
         this.openSnackBar(response.status_message + ' Soon the tmdb will update your vote rating of ' + rating);
+        this.isSendingVote = false;
       },
       error: (error) => {
         console.error('Error submitting rating:', error);
+        this.isSendingVote = false;
       }
     });
   }

@@ -8,4 +8,9 @@
     </mat-icon>
   </ng-container>
 </div>
-<button mat-raised-button color="primary" (click)="submitRating()">Submit Rating</button>
+<button mat-raised-button color="primary" [disabled]="isLoading" (click)="submitRating()">
+  <div class="d-flex align-items-center gap-2">
+    <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" [diameter]="20"></mat-progress-spinner>
+    Submit Rating
+  </div>
+</button>
