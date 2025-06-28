@@ -1,6 +1,6 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { MovieApiService } from 'src/app/core/services/movie-api.service';
-import { SearchResponse, Show } from 'src/app/models/movie.model';
+import { SearchMovieResponse, Show } from 'src/app/models/movie.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
 
@@ -30,7 +30,7 @@ export class SearchComponent implements OnDestroy {
 
     this.subscriptions = this.movieService.searchMovies(query, page)
       .subscribe({
-        next: (response: SearchResponse) => {
+        next: (response: SearchMovieResponse) => {
           this.shows = response.results;
           this.totalResults = response.total_results;
           this.isLoading = false;
