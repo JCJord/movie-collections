@@ -1,0 +1,15 @@
+<div class="position-relative">
+    <mat-progress-spinner
+        mode="determinate"
+        [ngClass]="{
+            'green-pie': valueAsNumber >= 7,
+            'yellow-pie': valueAsNumber < 7 && valueAsNumber >= 4,
+            'red-pie': valueAsNumber < 4
+        }"
+        [diameter]="diameter"
+        [value]="value">
+    </mat-progress-spinner>
+    <label class="position-absolute">
+        <span class="percent">{{displayValue}}</span>
+    </label>
+</div>

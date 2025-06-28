@@ -1,0 +1,23 @@
+label {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-weight: bold;
+}
+
+.percent {
+    font-size: 12px;
+}
+
+:host ::ng-deep mat-progress-spinner.green-pie svg circle {
+  stroke: #6cb82e;
+}
+
+:host ::ng-deep mat-progress-spinner.yellow-pie svg circle {
+  stroke: #f3e30a;
+}
+
+:host ::ng-deep mat-progress-spinner.red-pie svg circle {
+  stroke: #c51f1f;
+}
