@@ -1,6 +1,6 @@
 <section class="modal__container d-flex gap-3">
-    <div class="modal__image">
-        <img class="img-fluid" [src]="imgPath + show.poster_path" alt="">
+    <div class="modal__image flex-grow-1">
+        <img [src]="imgPath + show.poster_path" alt="">
     </div>
     <div class="modal__info flex-grow-1">
         <div class="d-flex flex-wrap justify-content-between">
@@ -29,7 +29,7 @@
             {{show.vote_count}}
         </h3>
         
-        <div>
+        <div class="mb-2">
             <app-star-rating [initialRating]="5" [isLoading]="isSendingVote" (ratingSubmitted)="saveRating($event)"></app-star-rating>
         </div>
         <button mat-button [matMenuTriggerFor]="menu">Languages <i class="ms-2 bi bi-chevron-down"></i></button>

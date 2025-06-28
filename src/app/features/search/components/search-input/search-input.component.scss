@@ -1,3 +1,4 @@
+@use 'src/styles/variables' as *;
 input {
     background-color: white;
     width: 100%;          /* optional, to control size */
@@ -13,6 +14,10 @@ input {
 }
 
 .search-button-bg {
-    background: linear-gradient(to right, rgba(rgb(30 213 169), 1) 0%, rgba(rgb(1 180 228), 1) 100%);
+    background: linear-gradient(to right, rgba($color-primary-start, 1) 0%, rgba($color-primary-end, 1) 100%) !important;
     color: #fff;
+    &:disabled {
+        background: linear-gradient(to right, rgba($color-primary-start, 0.5) 0%, rgba($color-primary-end, 0.5) 100%) !important;
+        color: #fff !important;
+    }
 }

@@ -1,0 +1,35 @@
+<mat-card class="border">
+    <div class="mb-3">
+        <div class="h3">
+            Create Collection
+        </div>
+        <div>
+            Add title and description to create a new collection of movies or series.
+        </div>
+    </div>
+    <mat-card-content>
+        <form [formGroup]="collectionForm" class="" (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-column gap-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Title</mat-label>
+                  <input matInput formControlName="title" />
+                    <mat-error *ngIf="getError('title')">
+                        {{ getError('title') }}
+                    </mat-error>
+                </mat-form-field>
+              
+                <mat-form-field appearance="fill">
+                  <mat-label>Description</mat-label>
+                  <input matInput formControlName="description" />
+                    <mat-error *ngIf="getError('description')">
+                       {{ getError('description') }}
+                   </mat-error>
+                </mat-form-field>
+              
+                <button mat-raised-button class="w-fit-content" color="primary" [disabled]="collectionForm.invalid" type="submit">
+                  Submit
+                </button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
