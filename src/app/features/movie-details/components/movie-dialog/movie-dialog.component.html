@@ -1,0 +1,40 @@
+<section class="modal__container d-flex gap-3">
+    <div class="modal__image">
+        <img class="img-fluid" [src]="imgPath + show.poster_path" alt="">
+    </div>
+    <div class="modal__info flex-grow-1">
+        <div class="d-flex flex-wrap justify-content-between">
+            <h3>{{show.title}}</h3>
+            <div>
+                <app-pie-chart diameter="35" [inputValue]="show.vote_average.toString()"></app-pie-chart>
+            </div>
+        </div>
+        <div class="mb-3">
+            {{show.overview}}
+        </div>
+        <h3>
+            <span class="fw-bold">Movie budget: </span>
+            {{show.budget | currency:'USD':'symbol':'1.2-2'}}
+        </h3>
+        <h3>
+            <span class="fw-bold">Release date: </span>
+            {{show.release_date | date:'longDate'}}
+        </h3>
+        <h3>
+            <span class="fw-bold">Revenue: </span>
+            {{show.revenue | currency:'USD':'symbol':'1.2-2'}}
+        </h3>
+        <h3>
+            <span class="fw-bold">Vote count: </span>
+            {{show.vote_count}}
+        </h3>
+        
+        <div>
+            <app-star-rating [initialRating]="5" [isLoading]="isSendingVote" (ratingSubmitted)="saveRating($event)"></app-star-rating>
+        </div>
+        <button mat-button [matMenuTriggerFor]="menu">Languages <i class="ms-2 bi bi-chevron-down"></i></button>
+            <mat-menu #menu="matMenu">
+            <button *ngFor="let languages of show.spoken_languages" mat-menu-item>{{languages.name}}</button>
+        </mat-menu>
+    </div>
+</section>

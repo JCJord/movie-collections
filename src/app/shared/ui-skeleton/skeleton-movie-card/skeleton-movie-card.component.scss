@@ -1,5 +1,7 @@
 @use 'src/styles/_skeleton.scss';
-
+mat-card {
+    min-height: 142px;
+}
 .card-container {
     img {
         width: 94px;

@@ -11,9 +11,10 @@
         </div>
     </div>
 </section>
+<router-outlet></router-outlet>
 <section class="container-lg">
     <div class="d-flex flex-column gap-3 pt-3">
-        <div *ngIf="isLoading;else content">
+        <div *ngIf="isLoading;else content" class="d-flex flex-column gap-3">
             <div *ngFor="let skeleton of getSkeletonArray(20)">
                 <app-skeleton-movie-card></app-skeleton-movie-card>
             </div>
