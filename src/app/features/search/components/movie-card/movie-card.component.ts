@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { MovieApiService } from 'src/app/core/services/movie-api.service';
 import { Show } from 'src/app/models/movie.model';
 
 @Component({
@@ -10,9 +13,12 @@ export class MovieCardComponent implements OnInit {
   @Input() show!: Show;
   imgPath: string = 'https://image.tmdb.org/t/p/w500';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  goToDetails(): void {
+    this.router.navigate(['/movie', this.show.id]);
+  }
 }
