@@ -1,0 +1,11 @@
+<div class="star-rating d-flex align-items-center">
+  <ng-container *ngFor="let star of stars; let i = index">
+    <mat-icon
+      class="star"
+      [ngClass]="{ active: i < rating }"
+      (click)="setRating(i + 1)">
+      {{ i < rating ? 'star' : 'star_border' }}
+    </mat-icon>
+  </ng-container>
+</div>
+<button mat-raised-button color="primary" (click)="submitRating()">Submit Rating</button>
