@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -9,10 +10,12 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     TopBarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule
   ],
   exports: [
     TopBarComponent,
+    MatCardModule
   ]
 })
 export class CoreModule { }
