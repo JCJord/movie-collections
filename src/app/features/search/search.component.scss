@@ -1,25 +1,44 @@
 .hero {
     &__container {
-        height: 50vh;
-        background: 
-            linear-gradient(#585858a2, #585858a2), // blue overlay
-            url('../../../assets/images/movie-poster.jpg');           
-            min-height: 300px;
+        height: 70vh;
+        position: relative;
+        min-height: 300px;
         height: calc(100vh / 2.5);
         max-height: 360px;
         background-color: rgba(0, 0, 0, .2);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 50% 50%;
-    }
+        background-position: 42% 42%;
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: 
+                linear-gradient(#0db3f5a0, #0db3f5a0),
+                url('../../../assets/images/movie-poster.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 42% 42%;
 
-    &__content {
-        line-height: 40px;
+            // Apply filters to the image only
+            filter: brightness(0.7) contrast(1.5) saturate(1.1);
+        }
     }   
+}
 
+mat-card {
+    cursor: pointer;
+}
 
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-32 {
+    font-size: 32px;
 }
 
 .hero-title {
-    font-size: 36px;
+    color: #fff;
 }
