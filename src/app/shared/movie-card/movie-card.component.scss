@@ -1,3 +1,4 @@
+@use 'src/styles/variables' as *;
 .card-container {
     cursor: pointer;
     img {
@@ -16,4 +17,20 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.title-link {
+  cursor: pointer;
+  &:hover {
+    transition: .3s ease-in-out;
+    span {
+      color: $color-primary-end;
+    }
+  }
+  text-decoration: none;
+
+}
+
+::ng-deep .mat-button {
+  min-width: 0 !important;
 }
