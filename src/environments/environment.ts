@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   tmdbApiKey: 'd95c537172c6071b79df6fef70c889db',
-  apiUrl: 'https://api.themoviedb.org/3/search/movie'
+  apiUrl: 'https://api.themoviedb.org/3'
 };
 /*
  * For easier debugging in development mode, you can import the following file
