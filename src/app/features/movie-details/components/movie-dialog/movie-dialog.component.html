@@ -1,6 +1,8 @@
-<section class="modal__container d-flex gap-3">
-    <div class="modal__image flex-grow-1">
-        <img [src]="imgPath + show.poster_path" alt="">
+<section *ngIf="!isLoading"  class="modal__container d-flex gap-3">
+    <div class="modal__image">
+        <img *ngIf="show.poster_path" [src]="imgPath + show.poster_path" alt="">
+        <div *ngIf="!show.poster_path" class="fake-img">
+        </div>
     </div>
     <div class="modal__info flex-grow-1">
         <div class="d-flex flex-wrap justify-content-between">
@@ -38,3 +40,5 @@
         </mat-menu>
     </div>
 </section>
+
+<app-movie-details-skeleton *ngIf="isLoading"></app-movie-details-skeleton>

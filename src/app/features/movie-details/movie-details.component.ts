@@ -23,59 +23,25 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const movieId = params['id']; // Get the movie ID from the route parameters
+      const movieId = params['id'];
       if (movieId) {
-        console.log(movieId)
-        this.loadMovieDetails(movieId);
+        this.openDialog(movieId);
       } else {
         console.error('Movie ID is not provided in the route parameters.');
       }
     });
   }
 
-  openDialog(data: MovieDetails, guestSessionId: string): void {
+  openDialog(movieId: string): void {
     const dialogRef = this.dialog.open(MovieDialogComponent, {
       width: '1200px',
       data: {
-        data: data,
-        guestSessionId: guestSessionId
+        movieId: movieId,
       }
     });
     
     dialogRef.afterClosed().subscribe(result => {
       this.router.navigate(['/']);
     });
-  }
-
-  loadMovieDetails(movieId: number): void {
-    const existingGuestSession = this.movieService.getGuest();
-
-    if (existingGuestSession) {
-      this.subscriptions.add(
-        this.movieService.findMovieById(movieId).subscribe({
-          next: (movieDetails) => {
-            this.openDialog(movieDetails, existingGuestSession);
-          },
-          error: (error) => {
-            console.error('Error fetching movie details:', error);
-          }
-        })
-      );
-    } else {
-      this.subscriptions.add(
-        forkJoin({
-          guestSession: this.movieService.createGuest(),
-          movieDetails: this.movieService.findMovieById(movieId)
-        }).subscribe({
-          next: ({ guestSession, movieDetails }) => {
-            localStorage.setItem('tmdb_guest_session', guestSession.guest_session_id);
-            this.openDialog(movieDetails, guestSession.guest_session_id);
-          },
-          error: (error) => {
-            console.error('Error creating guest session or fetching movie details:', error);
-          }
-        })
-      );
-    }
   }
 }

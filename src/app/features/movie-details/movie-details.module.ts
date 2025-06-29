@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UiSkeletonModule } from 'src/app/shared/ui-skeleton/ui-skeleton.module';
 
 
 
@@ -29,7 +30,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    UiSkeletonModule
   ]
 })
 export class MovieDetailsModule { }
