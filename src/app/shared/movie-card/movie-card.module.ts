@@ -21,7 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatTooltipModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports: [
     MovieCardComponent

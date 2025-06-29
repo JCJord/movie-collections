@@ -16,7 +16,7 @@
                 </mat-expansion-panel-header>
                 <div class="d-flex flex-column gap-3">
                     <div *ngFor="let show of collection.shows" class="d-flex justify-content-between align-items-center gap-2 w-100">
-                        <app-movie-card class="flex-grow-1 w-100" [show]="show" [showCollectionButton]="false"></app-movie-card>
+                        <app-movie-card class="flex-grow-1 w-100" [show]="show" [showCollectionButton]="false" [navigateToRoute]="false"></app-movie-card>
                         <button class="mt-2 d-flex justify-content-center" mat-button color="warn" (click)="deleteFromCollection(collection.id!, show.id)">
                             <mat-icon>
                                 delete

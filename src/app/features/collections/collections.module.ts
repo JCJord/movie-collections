@@ -15,6 +15,8 @@ import { CollectionSelectDialogComponent } from './components/collection-select-
 import { MatListModule } from '@angular/material/list';
 import { SearchModule } from '../search/search.module';
 import { MovieCardModule } from 'src/app/shared/movie-card/movie-card.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { MovieCardModule } from 'src/app/shared/movie-card/movie-card.module';
     MatExpansionModule,
     MatIconModule,
     MatListModule,
-    MovieCardModule
+    MovieCardModule,
+    MatSnackBarModule,
+    MatMenuModule
   ]
 })
 export class CollectionsModule { }
