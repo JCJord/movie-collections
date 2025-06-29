@@ -1,0 +1,15 @@
+@use '../../../styles/skeleton';
+.skeleton-image {
+    min-width: 325px;
+    min-height: 525px;
+}
+
+.title-skeleton {
+    min-width: 225px;
+    width: 100%;
+}
+
+.description-skeleton {
+    width: 100%;
+    min-width: 100px;
+}
