@@ -21,6 +21,7 @@ export class SearchComponent implements OnDestroy {
   currentPage: number = 1;
   isLoading: boolean = false;
   currentQuery: string = '';
+  searched: boolean = false;
 
   constructor(private movieService: MovieApiService) {}
 
@@ -36,12 +37,14 @@ export class SearchComponent implements OnDestroy {
           this.isLoading = false;
           console.log('Search results:', this.shows);
           console.log('Total results:', this.totalResults);
+          this.searched = true
         },
         error: (error) => {
           console.error('Error searching movies:', error);
           this.isLoading = false;
           this.shows = [];
           this.totalResults = 0;
+          this.searched = true
         }
     });
   }

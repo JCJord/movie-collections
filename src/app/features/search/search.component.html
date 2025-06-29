@@ -23,6 +23,10 @@
             <div *ngFor="let show of shows">
                 <app-movie-card [show]="show"></app-movie-card>
             </div>
+
+            <div *ngIf="shows.length === 0 && this.searched" class="h2">
+                No results found.
+            </div>
         </ng-template>
     </div>
     <div *ngIf="shows.length > 0" class="d-flex justify-content-center mt-4 mb-4">
